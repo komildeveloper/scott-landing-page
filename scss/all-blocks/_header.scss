@@ -1,0 +1,36 @@
+.header {
+  &__container {
+    .header__list {
+      @include flex-items;
+      align-items: center;
+      justify-content: space-between;
+
+      .header__item:first-of-type {
+        @include flex-items;
+        align-items: center;
+
+        .header__sub-list {
+          margin-left: 58px;
+
+          .header__sub-link + .header__sub-link {
+            padding-top: 36px;
+            padding-bottom: 36px;
+            padding-left: 32px;
+          }
+
+          .header__sub-link {
+            @include bold-text($dim_grey-color, 15px, 25px);
+            transition: 250ms color ease;
+
+            &:hover {
+              color: $yellow-color;
+            }
+          }
+        }
+      }
+      .header__big-link {
+        @include yellow-link;
+      }
+    }
+  }
+}
